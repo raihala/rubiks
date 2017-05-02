@@ -4,7 +4,7 @@
 3x3x3 rubik's cube
 """
 
-from rubiks import C, P
+from internals import C, P
 
 R = P(C('urf', 'bru', 'drb', 'frd'), C('ur', 'br', 'dr', 'fr'))
 U = P(C('urf', 'ufl', 'ulb', 'ubr'), C('ur', 'uf', 'ul', 'ub'))
