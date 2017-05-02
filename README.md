@@ -1,6 +1,6 @@
 # rubiks
 
-The file ```rubiks.py``` provides an interpreter for evaluating Rubik's cube permutations. It takes no command-line options. The interpreter prints the results of cube permutations in [cycle decomposition form](https://en.wikipedia.org/wiki/Permutation#Cycle_notation). Recognized inputs are the [fundamental moves and their modifiers](http://w.astro.berkeley.edu/~converse/rubiks.php?id1=basics&id2=notation).
+The file ```rubiks.py``` provides an interpreter for evaluating Rubik's cube permutations. It takes no command-line options. The interpreter prints the results of cube permutations in [cycle decomposition form](https://en.wikipedia.org/wiki/Permutation#Cycle_notation). Input to the interpreter should be in standard [Rubik's cube notation](https://www.speedsolving.com/wiki/index.php/3x3x3_notation), not including cube rotations or multiple-layer turns.
 
 For example:
 
