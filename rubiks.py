@@ -5,18 +5,18 @@ from three import *  # allows eval to recognize cube notation
 
 
 def sanitize_input(s):
-    stack = []
+    res = []
     for c in s:
         if c.upper() not in "RLUDBFMES'2":
             raise ValueError("Unrecognized character '%c' in input!" % c)
         if c.upper() in "RLUDBFMES":
-            stack.append(c.upper())
+            res.append(c.upper())
             continue
-        n = {"2": 1, "'": 2}[c]
-        if not stack:
+        if not res:
             raise ValueError("""Bad input, cannot start expression with "'" or "2"!""")
-        stack.extend([stack[-1]]*n)
-    return '*'.join(stack)
+        n = {"2": 1, "'": 2}[c]  # "2": do the most recent move once more; "'": do it twice more
+        res.extend([res[-1]]*n)
+    return '*'.join(res)
 
 
 def run_interpreter():
