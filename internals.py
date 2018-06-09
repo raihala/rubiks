@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import sys
-
 
 CUBICLES = {
     'ufl', 'urf', 'ubr', 'ulb',
@@ -175,7 +173,3 @@ class Permutation(object):
             product.cycles.append(Cycle(*current_cycle))
 
         return product
-
-
-C = Cycle
-P = Permutation
