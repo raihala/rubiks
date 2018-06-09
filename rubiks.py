@@ -6,7 +6,7 @@ from three import *  # evil trick that allows eval to recognize cube notation
 
 def sanitize_input(string):
     """
-    Replace M2 with MM and M' with MMM in the input string, where M is
+    Replace X2 with XX and X' with XXX in the input string, where X is
     any recognized basic Rubik's cube move {R, L, U, D, B, F, M, E, S},
     and then interpolate '*' between every letter. Return the resulting
     string.
@@ -18,18 +18,18 @@ def sanitize_input(string):
     string = string.upper()
     res = []
     for char in string:
-        if char in "RLUDBFMES":
+        if char in 'RLUDBFMES':
             res += [char]
-        elif char == "2":
+        elif char == '2':
             if res == []:
-                raise ValueError('Bad input, cannot start expression with "2"!')
+                raise ValueError("Bad input, cannot start expression with 2")
             res += [res[-1]]  # do the last move again
         elif char == "'":
             if res == []:
-                raise ValueError('Bad input, cannot start expression with "\'"!')
+                raise ValueError("Bad input, cannot start expression with '")
             res += [res[-1], res[-1]]  # do the last move two more times
         else:
-            raise ValueError("Unrecognized character '%c' in input!" % char)
+            raise ValueError("Unrecognized character %c in input!" % char)
     return '*'.join(res)
 
 
